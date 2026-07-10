@@ -1772,27 +1772,60 @@ desc:'A rich Arabian masterpiece — deep oud and warming amber spices elegantly
 photo:'https://i.pinimg.com/736x/61/41/a5/6141a53330bb5c4e5e7ecf3170e60077.jpg',
 fn:bA,
 opts:{bg:'#3A1E08',liq:'#8B4010',cap:'#B8923A',label:'Oud · Amber · Spice'},
-scene:{bg:'#1A0C04',acc:'rgba(139,64,16,.18)'}},
+scene:{bg:'#1A0C04', acc:'rgba(139,64,16,.18)'}
+},
+
 /* ── STAR RENDERER ── */
 function stars(r){
-  var f=Math.floor(r), h=(r%1>=0.5)?1:0, e=5-f-h;
-  var full='', half='', empty='';
-  for(var i=0;i<f;i++) full+='<span style="color:#B8923A;font-size:.75rem">&#9733;</span>';
-  if(h) half='<span style="color:#B8923A;font-size:.75rem">&frac12;</span>';
-  for(var j=0;j<e;j++) empty+='<span style="color:#E8C8D0;font-size:.75rem">&#9734;</span>';
-  return '<span class="stars">'+full+half+empty+'</span>';
+    var f = Math.floor(r);
+    var h = (r % 1 >= 0.5) ? 1 : 0;
+    var e = 5 - f - h;
+
+    var full = '';
+    var half = '';
+    var empty = '';
+
+    for(var i = 0; i < f; i++) {
+        full += '★';
+    }
+
+    if(h) {
+        half = '½';
+    }
+
+    for(var j = 0; j < e; j++) {
+        empty += '☆';
+    }
+
+    return full + half + empty;
 }
 
 /* ── SCENE BACKGROUND ── */
 function sceneBg(p, scene){
-  return `background:${scene.bg};`+
-    `position:relative;overflow:hidden;`;
+    return `background:${scene.bg};` +
+           `position:relative;overflow:hidden;`;
 }
 
 /* ── FEATURED CARD ── */
 function featCard(p){
-  var imgContent;
-  if(p.photo){
+    var imgContent;
+
+    if(p.photo){
+        imgContent = `<img src="${p.photo}" alt="${p.name}" class="product-img">`;
+    } else {
+        imgContent = `<div class="no-image">No Image</div>`;
+    }
+
+    return `
+    <div class="featured-card">
+        ${imgContent}
+        <h3>${p.name}</h3>
+        <p>${p.desc || ''}</p>
+        <div class="rating">${stars(p.rating || 0)}</div>
+        <strong>${p.price}</strong>
+    </div>
+    `;
+}
     imgContent = '<img src="'+p.photo+'" alt="'+p.name+'" class="feat-real-photo">';
   } else {
     var svg = p.fn({bg:p.opts.bg,liq:p.opts.liq,cap:p.opts.cap,label:p.opts.label,W:165,H:280});
