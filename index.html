@@ -1787,37 +1787,29 @@ function stars(r){
 
     for(var i = 0; i < f; i++) {
         full += '★';
-    }
-
-    if(h) {
-        half = '½';
-    }
-
-    for(var j = 0; j < e; j++) {
-        empty += '☆';
-    }
-
-    return full + half + empty;
+   }
+/* ── STAR RENDERER ── */
+function stars(r){
+  var f=Math.floor(r), h=(r%1>=0.5)?1:0, e=5-f-h;
+  var full='', half='', empty='';
+  for(var i=0;i<f;i++) full+='<span style="color:#B8923A;font-size:.75rem">&#9733;</span>';
+  if(h) half='<span style="color:#B8923A;font-size:.75rem">&frac12;</span>';
+  for(var j=0;j<e;j++) empty+='<span style="color:#E8C8D0;font-size:.75rem">&#9734;</span>';
+  return '<span class="stars">'+full+half+empty+'</span>';
 }
-
 /* ── SCENE BACKGROUND ── */
-function sceneBg(p, scene){ return `background:${scene.bg};` +
-           `position:relative;overflow:hidden;`;}
-
+function sceneBg(p){
+  return 'background:'+p.scene.bg+';position:relative;overflow:hidden;';
+}
 /* ── FEATURED CARD ── */
 function featCard(p){
-    var imgContent;
-
-    if(p.photo){
-        imgContent = `<img src="${p.photo}" alt="${p.name}" class="product-img">`;
-    } else {
-        imgContent = `<div class="no-image">No Image</div>`;
-    }
-
-    return `
-    <div class="featured-card">
-        ${imgContent}
-        <h3>${p.name}</h3>
+  var imgContent;
+  if(p.photo){
+    imgContent = '<img src="'+p.photo+'" alt="'+p.name+'" class="feat-real-photo">';
+  } else {
+    var svg = p.fn({bg:p.opts.bg,liq:p.opts.liq,cap:p.opts.cap,label:p.opts.label,W:165,H:280});
+    imgContent = '<div style="position:relative;z-index:2;padding-top:24px">'+svg+'</div>';
+  }
         <p>${p.desc || ''}</p>
         <div class="rating">${stars(p.rating || 0)}</div>
         <strong>${p.price}</strong>
