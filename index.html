@@ -660,6 +660,11 @@ textarea.f-ctrl { resize:vertical; min-height:96px; }
   .sec{padding:64px 5%}
   .hero-h1{font-size:2.6rem}
 }
+/* ── Real product photo images ── */
+.feat-real-photo,.prod-real-photo,.bs-real-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center top;display:block;
+}
 </style>
 </head>
 <body>
@@ -670,7 +675,7 @@ textarea.f-ctrl { resize:vertical; min-height:96px; }
 <div id="cl-loader" role="status" aria-label="Loading Classy Luxe">
 
   <!-- Floral corner ornaments -->
- <svg viewBox="0 0 160 290">
+  <svg class="cl-floral cl-floral-tl" width="190" height="190" viewBox="0 0 200 200" fill="none" opacity=".55">
     <path d="M10 10 Q42 22 62 54 Q82 86 72 128" stroke="#C4818E" stroke-width="1.3" fill="none" opacity=".6"/>
     <path d="M10 10 Q32 52 22 94 Q12 126 44 158" stroke="#C4818E" stroke-width="1" fill="none" opacity=".4"/>
     <circle cx="62" cy="54" r="12" fill="#E8A0AC" opacity=".5"/>
@@ -1207,7 +1212,7 @@ textarea.f-ctrl { resize:vertical; min-height:96px; }
       <div class="about-img-wrap rl">
         <div class="about-img-inner">
           <!-- Large hero bottle illustration -->
-          <div id="aboutBottle">
+          <div id="aboutBottle"></div>
           <!-- Pink marble wash overlay -->
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(242,221,226,.2) 0%,transparent 60%,rgba(232,200,208,.15) 100%)"></div>
         </div>
@@ -1382,9 +1387,9 @@ function bA(o){
 </defs>
 <ellipse cx="${W/2}" cy="${H-.5*H*.04}" rx="${bw*.46}" ry="${H*.028}" fill="rgba(0,0,0,.22)"/>
 <rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="2.5" fill="url(#${id}b)"/>
-<rect x="${bx+1}" y="${by+bh*.42}" width="${bw-2}" height="${bh*.56}" rx="0 0 2.5 2.5" fill="url(#${id}l)"/>
-<rect x="${bx}" y="${by}" width="${bw*.075}" height="${bh}" rx="2.5 0 0 2.5" fill="rgba(0,0,0,.18)"/>
-<rect x="${bx+bw*.925}" y="${by}" width="${bw*.075}" height="${bh}" rx="0 2.5 2.5 0" fill="rgba(0,0,0,.12)"/>
+<rect x="${bx+1}" y="${by+bh*.42}" width="${bw-2}" height="${bh*.56}" rx="2" fill="url(#${id}l)"/>
+<rect x="${bx}" y="${by}" width="${bw*.075}" height="${bh}" rx="2" fill="rgba(0,0,0,.18)"/>
+<rect x="${bx+bw*.925}" y="${by}" width="${bw*.075}" height="${bh}" rx="2" fill="rgba(0,0,0,.12)"/>
 <rect x="${bx+bw*.12}" y="${by+4}" width="${bw*.062}" height="${bh-8}" rx="3" fill="rgba(255,255,255,.44)"/>
 <rect x="${bx+bw*.19}" y="${by+4}" width="${bw*.02}" height="${bh*.65}" rx="1" fill="rgba(255,255,255,.2)"/>
 <rect x="${bx}" y="${by}" width="${bw}" height="${bh*.028}" fill="rgba(255,255,255,.18)"/>
@@ -1403,7 +1408,7 @@ function bA(o){
 <rect x="${cx+cw*.19}" y="${cy+ch*.07}" width="${cw*.025}" height="${ch*.75}" rx="1" fill="rgba(255,255,255,.12)"/>
 <rect x="${cx}" y="${cy}" width="${cw}" height="${ch*.023}" rx="2.5" fill="${dk(cap,38)}"/>
 <rect x="${cx+cw*.07}" y="${cy+ch*.006}" width="${cw*.86}" height="${ch*.012}" fill="rgba(255,255,255,.2)"/>
-<rect x="${cx}" y="${cy+ch*.9}" width="${cw}" height="${ch*.1}" rx="0 0 3.5 3.5" fill="rgba(0,0,0,.16)"/>
+<rect x="${cx}" y="${cy+ch*.9}" width="${cw}" height="${ch*.1}" rx="3" fill="rgba(0,0,0,.16)"/>
 </svg>`;
 }
 
@@ -1433,9 +1438,9 @@ function bB(o){
 </defs>
 <ellipse cx="${W/2}" cy="${H-.5}" rx="${bw*.44}" ry="${H*.026}" fill="rgba(0,0,0,.2)"/>
 <rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="${br}" fill="url(#${id}b)"/>
-<rect x="${bx+1}" y="${by+bh*.43}" width="${bw-2}" height="${bh*.55}" rx="0 0 ${br} ${br}" fill="url(#${id}l)"/>
-<rect x="${bx}" y="${by}" width="${bw*.08}" height="${bh}" rx="${br} 0 0 ${br}" fill="rgba(0,0,0,.16)"/>
-<rect x="${bx+bw*.92}" y="${by}" width="${bw*.08}" height="${bh}" rx="0 ${br} ${br} 0" fill="rgba(0,0,0,.1)"/>
+<rect x="${bx+1}" y="${by+bh*.43}" width="${bw-2}" height="${bh*.55}" rx="${br}" fill="url(#${id}l)"/>
+<rect x="${bx}" y="${by}" width="${bw*.08}" height="${bh}" rx="${br}" fill="rgba(0,0,0,.16)"/>
+<rect x="${bx+bw*.92}" y="${by}" width="${bw*.08}" height="${bh}" rx="${br}" fill="rgba(0,0,0,.1)"/>
 <rect x="${bx+bw*.13}" y="${by+6}" width="${bw*.065}" height="${bh-12}" rx="3" fill="rgba(255,255,255,.46)"/>
 <rect x="${bx+bw*.2}" y="${by+6}" width="${bw*.02}" height="${bh*.6}" rx="1" fill="rgba(255,255,255,.22)"/>
 <rect x="${bx+bw*.13}" y="${by+bh*.12}" width="${bw*.74}" height="${bh*.35}" rx="1" fill="rgba(255,255,255,.78)"/>
@@ -1480,9 +1485,9 @@ function bC(o){
 </defs>
 <ellipse cx="${W/2}" cy="${H-.5}" rx="${bw*.45}" ry="${H*.022}" fill="rgba(0,0,0,.2)"/>
 <rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="2" fill="url(#${id}b)"/>
-<rect x="${bx+1}" y="${by+bh*.42}" width="${bw-2}" height="${bh*.56}" rx="0 0 2 2" fill="url(#${id}l)"/>
-<rect x="${bx}" y="${by}" width="${bw*.09}" height="${bh}" rx="2 0 0 2" fill="rgba(0,0,0,.2)"/>
-<rect x="${bx+bw*.91}" y="${by}" width="${bw*.09}" height="${bh}" rx="0 2 2 0" fill="rgba(0,0,0,.13)"/>
+<rect x="${bx+1}" y="${by+bh*.42}" width="${bw-2}" height="${bh*.56}" rx="2" fill="url(#${id}l)"/>
+<rect x="${bx}" y="${by}" width="${bw*.09}" height="${bh}" rx="2" fill="rgba(0,0,0,.2)"/>
+<rect x="${bx+bw*.91}" y="${by}" width="${bw*.09}" height="${bh}" rx="2" fill="rgba(0,0,0,.13)"/>
 <rect x="${bx+bw*.14}" y="${by+3}" width="${bw*.075}" height="${bh-6}" rx="3" fill="rgba(255,255,255,.46)"/>
 <rect x="${bx+bw*.22}" y="${by+3}" width="${bw*.024}" height="${bh*.68}" rx="1" fill="rgba(255,255,255,.2)"/>
 <rect x="${bx}" y="${by}" width="${bw}" height="${bh*.025}" fill="rgba(255,255,255,.18)"/>
@@ -1529,9 +1534,9 @@ function bD(o){
 </defs>
 <ellipse cx="${W/2}" cy="${H-.5}" rx="${bw*.44}" ry="${H*.028}" fill="rgba(0,0,0,.2)"/>
 <rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="3" fill="url(#${id}b)"/>
-<rect x="${bx+1}" y="${by+bh*.43}" width="${bw-2}" height="${bh*.55}" rx="0 0 3 3" fill="url(#${id}l)"/>
-<rect x="${bx}" y="${by}" width="${bw*.075}" height="${bh}" rx="3 0 0 3" fill="rgba(0,0,0,.17)"/>
-<rect x="${bx+bw*.925}" y="${by}" width="${bw*.075}" height="${bh}" rx="0 3 3 0" fill="rgba(0,0,0,.11)"/>
+<rect x="${bx+1}" y="${by+bh*.43}" width="${bw-2}" height="${bh*.55}" rx="3" fill="url(#${id}l)"/>
+<rect x="${bx}" y="${by}" width="${bw*.075}" height="${bh}" rx="3" fill="rgba(0,0,0,.17)"/>
+<rect x="${bx+bw*.925}" y="${by}" width="${bw*.075}" height="${bh}" rx="3" fill="rgba(0,0,0,.11)"/>
 <rect x="${bx+bw*.1}" y="${by+3}" width="${bw*.055}" height="${bh-6}" rx="3" fill="rgba(255,255,255,.44)"/>
 <rect x="${bx+bw*.16}" y="${by+3}" width="${bw*.018}" height="${bh*.62}" rx="1" fill="rgba(255,255,255,.2)"/>
 <rect x="${bx}" y="${by}" width="${bw}" height="${bh*.024}" fill="rgba(255,255,255,.16)"/>
@@ -1654,28 +1659,28 @@ function bF(o){
 }
 
 /* ═══ PRODUCT DATA ═══ */
-   const STUDENT = [
+const STUDENT = [
   { name:'Angham', col:'Student', price:'GH₵ 90', size:'30ml', rating:4.8, rev:124, tag:'bestseller',
     notes:['Ginger','Praline','Vanilla'], desc:'A warm gourmand fragrance with spicy ginger, sweet praline, and rich vanilla. Soft, elegant, and perfect for everyday wear or special occasions.',
     photo:'https://i.pinimg.com/1200x/fe/34/23/fe3423dd1a0c3edb9e2efbb1407116db.jpg',
     fn:bB, opts:{bg:'#3D1428',liq:'#D4607C',cap:'#C9A84C',label:'Ginger · Praline · Vanilla'},
     scene:{bg:'#1A0610',acc:'rgba(212,96,124,.14)'}},
-  { name:'Ophelia', col:'Student', price:'GH₵ 60', size:'50ml', rating:4.6, rev:98, tag:'new',
+  { name:'Ophelia', col:'Student', price:'GH₵ 90', size:'50ml', rating:4.6, rev:98, tag:'new',
     notes:['Basil','Lavender','Honeyed Florals'], desc:'A graceful floral fragrance with fresh herbal notes, soft honeyed florals, and a warm woody base. Feminine, elegant, and long-lasting.',
     photo:'https://i.pinimg.com/1200x/4d/ff/a1/4dffa130dc03ee873897391f968b9498.jpg',
     fn:bC, opts:{bg:'#0E2A28',liq:'#5ABCB0',cap:'#9AA8B0',label:'Basil · Lavender · Florals'},
     scene:{bg:'#061412',acc:'rgba(90,188,176,.1)'}},
-  { name:'Suave', col:'Student', price:'GH₵ 60', size:'50ml', rating:4.7, rev:87, tag:'',
+  { name:'Suave', col:'Student', price:'GH₵ 115', size:'50ml', rating:4.7, rev:87, tag:'',
     notes:['Cardamom','Cedarwood','Musk'], desc:'A bold blend of spicy cardamom, smooth cedarwood, and sensual musk. Fresh, modern, and perfect for both day and night.',
     photo:'https://i.pinimg.com/1200x/71/3e/ff/713eff99177349a2ef1f1beaa94b0230.jpg',
     fn:bA, opts:{bg:'#2A1A0A',liq:'#D4A060',cap:'#C9A84C',label:'Cardamom · Cedar · Musk'},
     scene:{bg:'#140C04',acc:'rgba(212,160,96,.12)'}},
-  { name:'Aventos', col:'Student', price:'GH₵ 60', size:'50ml', rating:4.9, rev:156, tag:'bestseller',
+  { name:'Aventos', col:'Student', price:'GH₵ 110', size:'50ml', rating:4.9, rev:156, tag:'bestseller',
     notes:['Pineapple','Bergamot','Patchouli'], desc:'A vibrant blend of fresh pineapple, sparkling bergamot, and earthy patchouli. Modern, masculine, and long-lasting with an elegant woody finish.',
     photo:'https://i.pinimg.com/1200x/c6/73/4b/c6734b21d8dac355171f2d7481d4ddf8.jpg',
     fn:bD, opts:{bg:'#0A1A30',liq:'#4090D8',cap:'#7890C0',label:'Pineapple · Bergamot · Patchouli'},
     scene:{bg:'#040A18',acc:'rgba(64,144,216,.1)'}},
-  { name:'Asad', col:'Student', price:'GH₵ 50', size:'50ml', rating:4.5, rev:72, tag:'',
+  { name:'Club de Nuit', col:'Student', price:'GH₵ 105', size:'50ml', rating:4.5, rev:72, tag:'',
     notes:['Pineapple','Rose','Patchouli'], desc:'A vibrant blend of juicy pineapple, elegant rose, and earthy patchouli, finishing with warm woods and musk. Confident, timeless, and suitable for any occasion.',
     photo:'https://i.pinimg.com/1200x/85/ed/68/85ed6843ff15dac3bec7839b41fe8394.jpg',
     fn:bF, opts:{bg:'#2A0A20',liq:'#D870A8',cap:'#C0508C',label:'Pineapple · Rose · Patchouli'},
@@ -1685,109 +1690,65 @@ function bF(o){
     photo:'https://i.pinimg.com/1200x/99/4b/5c/994b5c042a28b033c193070db4a60987.jpg',
     fn:bE, opts:{bg:'#1A2A08',liq:'#90C830',cap:'#608020',label:'Saffron · Ambergris · Cedar'},
     scene:{bg:'#0C1404',acc:'rgba(144,200,48,.08)'}},
-      { name:'Summer Pink', col:'Student', price:'GH₵ 50', size:'50ml', rating:4.8, rev:53, tag:'bestseller',
-    notes:['Red Berries','Rose','Vanilla'], desc:'A cheerful blend of juicy red berries, delicate rose, and creamy vanilla. Light, youthful, and ideal for everyday wear.',
-    photo:'https://perfumesandbeyondltd.com/wp-content/uploads/2025/02/5834908596163430599.jpg',
-    fn:bB, opts:{bg:'#3D1428',liq:'#D4607C',cap:'#C9A84C',label:'Red · Rose · Vanilla'},
+  { name:'Summer Pink', col:'Student', price:'GH₵ 50', size:'50ml', rating:4.8, rev:0, tag:'bestseller',
+    notes:['Note 1','Note 2','Note 3'], desc:'Add your description here.',
+    photo:'',
+    fn:bB, opts:{bg:'#3D1428',liq:'#D4607C',cap:'#C9A84C',label:'Note 1 · Note 2 · Note 3'},
     scene:{bg:'#1A0610',acc:'rgba(212,96,124,.14)'}},
   { name:'Intense Man', col:'Student', price:'GH₵ 50', size:'50ml', rating:4.8, rev:0, tag:'bestseller',
-  notes:['Citrus','Spices','Woody Notes'], desc:'A bold blend of fresh citrus, warm spices, and smooth woody notes. Sophisticated, masculine, and designed to leave a lasting impression.',
-    photo:'https://i.pinimg.com/736x/84/b7/56/84b756fe7404c064e220096809091dc3.jpg',
-    fn:bD, opts:{bg:'#0A1A30',liq:'#4090D8',cap:'#7890C0',label:'Citrus · Spices · Woody'},
+    notes:['Note 1','Note 2','Note 3'], desc:'Add your description here.',
+    photo:'',
+    fn:bD, opts:{bg:'#0A1A30',liq:'#4090D8',cap:'#7890C0',label:'Note 1 · Note 2 · Note 3'},
     scene:{bg:'#040A18',acc:'rgba(64,144,216,.1)'}},
   { name:'Yara', col:'Student', price:'GH₵ 50', size:'50ml', rating:4.8, rev:0, tag:'bestseller',
-    notes:['Heliotrope','Tropical Fruits','Vanilla'], desc:'A delightful blend of tropical fruits, powdery heliotrope, and creamy vanilla. Warm, playful, and long-lasting with a smooth, gourmand finish.',
-    photo:'https://i.pinimg.com/1200x/f3/25/6c/f3256c3e79b12d8df3d4fa39ede562b1.jpg',
-    fn:bF, opts:{bg:'#2A0A20',liq:'#D870A8',cap:'#C0508C',label:'Heliotrope · Tropical · Vanilla'},
+    notes:['Note 1','Note 2','Note 3'], desc:'Add your description here.',
+    photo:'',
+    fn:bF, opts:{bg:'#2A0A20',liq:'#D870A8',cap:'#C0508C',label:'Note 1 · Note 2 · Note 3'},
     scene:{bg:'#140610',acc:'rgba(216,112,168,.12)'}},
 ];
+
 const GENERAL = [
- { name:'Barakkat Rouge', col:'General', price:'GH₵ 160', size:'100ml', rating:4.9, rev:312, tag:'bestseller',
-notes:['Saffron','Ambergris','Cedarwood'],
-desc:'A sophisticated fragrance featuring luminous saffron, smooth ambergris, and refined cedarwood. Bold, modern, and perfect for any occasion.',
-photo:'https://i.pinimg.com/1200x/53/74/f1/5374f13ddb1c2222138b480ca5f0938f.jpg',
-fn:bA,
-opts:{bg:'#0A0806',liq:'#8B5E1A',cap:'#B8923A',label:'Saffron · Amber · Cedar'},
-scene:{bg:'#060402',acc:'rgba(139,94,26,.15)'}},
+  { name:'Midnight Royale', col:'General', price:'GH₵ 280', size:'100ml', rating:4.9, rev:312, tag:'bestseller',
+    notes:['Oud','Dark Amber','Smoked Musk'], desc:'Opulent oud, dark amber, and smoked musk. Bold, commanding, and absolutely unforgettable.',
+    fn:bA, opts:{bg:'#0A0806',liq:'#8B5E1A',cap:'#B8923A',label:'Oud · Amber · Musk'},
+    scene:{bg:'#060402',acc:'rgba(139,94,26,.15)'}},
+  { name:'Oud Noir Prestige', col:'General', price:'GH₵ 350', size:'100ml', rating:5.0, rev:198, tag:'bestseller',
+    notes:['Arabian Oud','Vanilla','Sandalwood'], desc:'Rich Arabian oud layered with warm vanilla and aged sandalwood. The signature of true prestige.',
+    fn:bC, opts:{bg:'#120E06',liq:'#C89030',cap:'#9A7218',label:'Oud · Vanilla · Sandalwood'},
+    scene:{bg:'#0A0804',acc:'rgba(200,144,48,.14)'}},
+  { name:'Black Diamond', col:'General', price:'GH₵ 320', size:'100ml', rating:4.7, rev:145, tag:'',
+    notes:['Vetiver','Leather','Bergamot'], desc:'Smoky vetiver, aged leather, and bergamot. A scent of understated power and deep sophistication.',
+    fn:bE, opts:{bg:'#0C0C10',liq:'#808088',cap:'#505058',label:'Vetiver · Leather · Bergamot'},
+    scene:{bg:'#080808',acc:'rgba(128,128,136,.1)'}},
+  { name:'Golden Hour', col:'General', price:'GH₵ 290', size:'100ml', rating:4.8, rev:167, tag:'new',
+    notes:['Amber','Tonka Bean','Caramel Musk'], desc:'Warm amber and tonka bean wrapped in a caramel musk finish. Luxurious and irresistibly captivating.',
+    fn:bD, opts:{bg:'#1C1006',liq:'#D49020',cap:'#C09018',label:'Amber · Tonka · Caramel'},
+    scene:{bg:'#0E0804',acc:'rgba(212,144,32,.13)'}},
+  { name:'La Belle Époque', col:'General', price:'GH₵ 300', size:'100ml', rating:4.8, rev:143, tag:'',
+    notes:['Iris','White Peach','Sandalwood'], desc:'Iris, white peach, and warm sandalwood. Timeless femininity in a single exquisite breath.',
+    fn:bF, opts:{bg:'#200814',liq:'#D070A0',cap:'#A84080',label:'Iris · Peach · Sandalwood'},
+    scene:{bg:'#100408',acc:'rgba(208,112,160,.12)'}},
+  { name:"Emperor's Reserve", col:'General', price:'GH₵ 380', size:'100ml', rating:5.0, rev:89, tag:'bestseller',
+    notes:['Frankincense','Myrrh','Warm Spice'], desc:'Regal frankincense, myrrh, and ancient warm spices. An aura of majesty that commands every room.',
+    fn:bB, opts:{bg:'#1A0E04',liq:'#A06820',cap:'#886010',label:'Frankincense · Myrrh · Spice'},
+    scene:{bg:'#0C0602',acc:'rgba(160,104,32,.14)'}},
+  { name:'Velvet Noir', col:'General', price:'GH₵ 260', size:'100ml', rating:4.6, rev:118, tag:'',
+    notes:['Dark Rose','Patchouli','Musk'], desc:'Dark rose petals, rich patchouli, and velvety musk. Deeply romantic and seductively mysterious.',
+    fn:bA, opts:{bg:'#18060E',liq:'#A02850',cap:'#802040',label:'Dark Rose · Patchouli · Musk'},
+    scene:{bg:'#0C0406',acc:'rgba(160,40,80,.12)'}},
+  { name:'Silver Mist', col:'General', price:'GH₵ 240', size:'100ml', rating:4.5, rev:76, tag:'new',
+    notes:['White Florals','Grey Musk','Ambergris'], desc:'Clean white florals drift over mineral grey musk and rare ambergris. Modern, refined, elegant.',
+    fn:bE, opts:{bg:'#141418',liq:'#B0B0C0',cap:'#808098',label:'White Floral · Grey Musk'},
+    scene:{bg:'#0A0A0C',acc:'rgba(176,176,192,.09)'}},
+  /* ── REAL PRODUCT PHOTO ── */
+  { name:'Mousuf', col:'General', price:'GH₵ 550', size:'100ml', rating:4.9, rev:41, tag:'bestseller',
+    notes:['Oud','Amber','Warm Spice','Sandalwood'],
+    desc:'A rich Arabian masterpiece — deep oud and warming amber spices elegantly packaged in a hand-stitched burlap pouch. Commanding longevity and extraordinary sillage.',
+    photo:'',
+    fn:bA, opts:{bg:'#3A1E08',liq:'#8B4010',cap:'#B8923A',label:'Oud · Amber · Spice'},
+    scene:{bg:'#1A0C04',acc:'rgba(139,64,16,.18)'}},
+];
 
-{ name:'Shamoki', col:'General', price:'GH₵ 220', size:'100ml', rating:5.0, rev:198, tag:'bestseller',
-notes:['Saffron','Vanilla','Musk'],
-desc:'A captivating blend of warm saffron, creamy vanilla, and soft musk. Smooth, sophisticated, and perfect for both day and evening wear.',
-photo:'https://i.pinimg.com/1200x/2d/4c/aa/2d4caa2518efdd8616a01e7ba3116348.jpg',
-fn:bC,
-opts:{bg:'#120E06',liq:'#C89030',cap:'#9A7218',label:'Saffron · Vanilla · Musk'},
-scene:{bg:'#0A0804',acc:'rgba(200,144,48,.14)'}},
-
-{ name:'Oud Arabia', col:'General', price:'GH₵ 160', size:'100ml', rating:4.7, rev:145, tag:'',
-notes:['Oud Wood','Saffron','Amber','Musk'],
-desc:'An exquisite oriental fragrance combining rich oud wood, exotic saffron, warm amber, and sensual musk. Oud Arabia delivers a captivating, sophisticated aroma that reflects elegance, tradition, and luxury.',
-photo:'https://i.pinimg.com/736x/d7/6e/3e/d76e3e15e4c438b6b02361a02fc847f0.jpg',
-fn:bE,
-opts:{bg:'#0C0C10',liq:'#808088',cap:'#505058',label:'Oud Wood · Saffron · Amber'},
-scene:{bg:'#080808',acc:'rgba(128,128,136,.1)'}},
-
-{ name:'Berrys Weekend', col:'General', price:'GH₵ 150', size:'100ml', rating:4.8, rev:167, tag:'new',
-notes:['Red Berries','Rose','Vanilla','Musk'],
-desc:'A delightful fragrance combining juicy red berries, romantic rose, creamy vanilla, and soft musk. Berrys Weekend creates a sweet, feminine, and elegant aroma perfect for memorable moments.',
-photo:'https://i.pinimg.com/736x/8f/82/90/8f8290162b2a794a6b1f7999b1dfb54b.jpg',
-fn:bD,
-opts:{bg:'#1C1006',liq:'#D49020',cap:'#C09018',label:'Red Berries · Rose · Vanilla'},
-scene:{bg:'#0E0804',acc:'rgba(212,144,32,.13)'}},
-
-{ name:'Hawas Ice', col:'General', price:'GH₵ 480', size:'100ml', rating:4.8, rev:143, tag:'',
-notes:['Bergamot','Mint','Aquatic Notes','Musk'],
-desc:'An invigorating fragrance combining sparkling bergamot, refreshing mint, cool aquatic accords, and sensual musk. Hawas Ice creates a modern, fresh, and sophisticated scent for the confident individual.',
-photo:'https://i.pinimg.com/736x/44/ad/43/44ad43d5dadd934a0cef384c4ea9b480.jpg',
-fn:bF,
-opts:{bg:'#200814',liq:'#D070A0',cap:'#A84080',label:'Bergamot · Mint · Aquatic Notes · Musk'},
-scene:{bg:'#100408',acc:'rgba(208,112,160,.12)'}},
-
-{ name:'Club de Nuit', col:'General', price:'GH₵ 530', size:'100ml', rating:5.0, rev:89, tag:'bestseller',
-notes:['Citrus Fruits','Blackcurrant','Rose','Vanilla','Musk'],
-desc:'An elegant fragrance combining sparkling citrus, rich blackcurrant, delicate rose, sweet vanilla, and sensual musk. Club de Nuit creates a timeless, powerful aroma that reflects confidence and refined luxury.',
-photo:'https://i.pinimg.com/1200x/ba/c4/8f/bac48fdbedae96d4efefd882b313079e.jpg',
-fn:bB,
-opts:{bg:'#1A0E04',liq:'#A06820',cap:'#886010',label:'Citrus Fruits · Blackcurrant · Rose · Vanilla · Musk'},
-scene:{bg:'#0C0602',acc:'rgba(160,104,32,.14)'}},
-
-{ name:'9PM Rebel', col:'General', price:'GH₵ 470', size:'100ml', rating:4.6, rev:118, tag:'',
-notes:['Apple','Lavender','Spices','Vanilla','Amber'],
-desc:'A captivating fragrance combining fresh apple, smooth lavender, warm spices, creamy vanilla, and rich amber. 9PM Rebel creates a powerful and irresistible aroma for those who love to stand out.',
-photo:'https://i.pinimg.com/1200x/22/24/53/222453b3d6d32cda19056b9f6c5e0b18.jpg',
-fn:bA,
-opts:{bg:'#18060E',liq:'#A02850',cap:'#802040',label:'Apple · Lavender · Spices · Vanilla · Amber'},
-scene:{bg:'#0C0406',acc:'rgba(160,40,80,.12)'}},
-
-{ name:'Mousuf', col:'General', price:'GH₵ 180', size:'100ml', rating:4.5, rev:76, tag:'new',
-notes:['Rose','Fruits','Vanilla','Musk','Amber'],
-desc:'A refined fragrance combining juicy fruits, delicate rose, creamy vanilla, warm amber, and sensual musk. Mousuf creates a charming and sophisticated scent perfect for confident everyday wear and memorable occasions.',
-photo:'https://i.pinimg.com/736x/61/41/a5/6141a53330bb5c4e5e7ecf3170e60077.jpg',
-fn:bE,
-opts:{bg:'#141418',liq:'#B0B0C0',cap:'#808098',label:'Fruits · Vanilla · Musk · Amber'},
-scene:{bg:'#0A0A0C',acc:'rgba(176,176,192,.09)'}},
-
-{ name:'Mousuf', col:'General', price:'GH₵ 180', size:'100ml', rating:4.9, rev:41, tag:'bestseller',
-notes:['Oud','Amber','Warm Spice','Sandalwood'],
-desc:'A rich Arabian masterpiece — deep oud and warming amber spices elegantly packaged in a hand-stitched burlap pouch. Commanding longevity and extraordinary sillage.',
-photo:'https://i.pinimg.com/736x/61/41/a5/6141a53330bb5c4e5e7ecf3170e60077.jpg',
-fn:bA,
-opts:{bg:'#3A1E08',liq:'#8B4010',cap:'#B8923A',label:'Oud · Amber · Spice'},
-scene:{bg:'#1A0C04', acc:'rgba(139,64,16,.18)'}
-},
-
-/* ── STAR RENDERER ── */
-function stars(r){
-    var f = Math.floor(r);
-    var h = (r % 1 >= 0.5) ? 1 : 0;
-    var e = 5 - f - h;
-
-    var full = '';
-    var half = '';
-    var empty = '';
-
-    for(var i = 0; i < f; i++) {
-        full += '★';
-   }
 /* ── STAR RENDERER ── */
 function stars(r){
   var f=Math.floor(r), h=(r%1>=0.5)?1:0, e=5-f-h;
@@ -1797,10 +1758,13 @@ function stars(r){
   for(var j=0;j<e;j++) empty+='<span style="color:#E8C8D0;font-size:.75rem">&#9734;</span>';
   return '<span class="stars">'+full+half+empty+'</span>';
 }
+
 /* ── SCENE BACKGROUND ── */
-function sceneBg(p){
-  return 'background:'+p.scene.bg+';position:relative;overflow:hidden;';
+function sceneBg(p, scene){
+  return `background:${scene.bg};`+
+    `position:relative;overflow:hidden;`;
 }
+
 /* ── FEATURED CARD ── */
 function featCard(p){
   var imgContent;
