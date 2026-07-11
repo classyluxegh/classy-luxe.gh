@@ -1808,17 +1808,6 @@ function featCard(p){
     imgContent = '<img src="'+p.photo+'" alt="'+p.name+'" class="feat-real-photo">';
   } else {
     var svg = p.fn({bg:p.opts.bg,liq:p.opts.liq,cap:p.opts.cap,label:p.opts.label,W:165,H:280});
-    imgContent = '<div style="position:relative;z-index:2;padding-top:24px">'+svg+'</div>';
-  }
-        <p>${p.desc || ''}</p>
-        <div class="rating">${stars(p.rating || 0)}</div>
-        <strong>${p.price}</strong>
-    </div>
-    `;
-}
-    imgContent = '<img src="'+p.photo+'" alt="'+p.name+'" class="feat-real-photo">';
-  } else {
-    var svg = p.fn({bg:p.opts.bg,liq:p.opts.liq,cap:p.opts.cap,label:p.opts.label,W:165,H:280});
     imgContent = '<div class="feat-img-content" style="position:relative;z-index:2;padding-top:24px">'+svg+'</div>';
   }
   var badge = p.tag ? '<div class="feat-badge '+(p.tag==='bestseller'?'badge-bs':'badge-new')+'">'+(p.tag==='bestseller'?'Best Seller':'New')+'</div>' : '';
